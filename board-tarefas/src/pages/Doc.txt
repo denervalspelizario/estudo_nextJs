@@ -1,0 +1,89 @@
+/*
+  Foi criado com next13
+  sem approuter
+  com typescript
+  sem src
+
+
+  a autenticação foi feita com next-auth
+
+  doc https://next-auth.js.org/getting-started/example
+
+  e o banco foi feito com firebase (npm install firebase)
+
+
+  npm install next-auth
+
+
+  todos os tipos de autenticação
+  https://next-auth.js.org/providers/
+
+
+  passo a passo
+  va na documentação instale o next auth na aplicação
+  
+  va em _app.tsx faça o envelopamento das rotas com session
+  
+  crie o arquivo api/auth
+  
+  depois va na documentação selecione o google
+  
+  va em configuration e na url final apis/credentials paa ciriar suas credenciais
+
+  na pagina credenciais clique em criar credentials 
+  e clicar em OAuth client ID  
+  clique em configurar tela de consentimento
+  clicar em uso externo
+  e adicione as informações necessarias como:
+  appname, appdomain e etc 
+
+  Obs: em app domain a principio eu coloquei 
+  tudo http://localhost:3000(pq é um app teste de estudo)
+
+  clicar em salvar e continuar
+
+  clicar adicionar escopos
+
+  neste caso foi clicado em
+  [x] Ver o endereço de e-mail principal da sua Conta do Google
+  [x] Ver suas informações pessoais, inclusive aquelas que você disponibilizou publicamente
+
+  e clicar em atualizar
+
+  depois salvar e continuar
+
+  e voltar ao painel
+
+  clicar em credenciais
+
+  clicar em criação de credenciais
+  
+  clicar em OAuth client ID
+
+  colocar como aplicação web
+
+  adicionar nome
+
+  colocar os dois dominios 
+
+  dominio de origem 
+  (Origens JavaScript autorizadas)
+  como é um app teste será http://localhost:3000
+  se fosse feito o deploys vc coloca url do site
+
+  dominio de redirecionamento de acesso de login(usuario logou)
+  (URIs de redirecionamento autorizados)
+  novamente um teste será http://localhost:3000/api/auth/callback/google
+
+  e depois só clicar em create
+
+  e ele vai gerar nosso cliente ID e cliente secret
+
+  crie um arquivo .env e adicione as variaveis
+
+  obs la vao ter 4 variaveis e a jwtssecret é gerada pelo site md5 hash generator  gera uma md5 hash e usa la na variavel
+
+  agora volte no pages/api/auth/..nextauth.tsx
+  e coloque as configurações
+
+*/
